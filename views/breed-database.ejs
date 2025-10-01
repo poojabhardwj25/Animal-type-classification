@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BPA Breed Database</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-100">
+<nav class="bg-blue-600 text-white p-4 flex gap-4">
+  <a href="/dashboard" class="hover:underline">Dashboard</a>
+  <a href="/breed" class="hover:underline">Breed Recognition</a>
+  <a href="/breed-database" class="hover:underline">Breed Database</a>
+  <a href="/registration" class="hover:underline">Registration</a>
+  <a href="/login" onclick="logout()" class="ml-auto hover:underline">Logout</a>
+</nav>
+<div class="container mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-4">Breed Database</h1>
+  <input type="text" id="searchBreeds" placeholder="Search breeds..." class="border px-3 py-2 w-full rounded mb-4" oninput="filterBreeds()">
+  <div id="breedCards" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

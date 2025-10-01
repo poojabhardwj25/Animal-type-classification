@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BPA - Animal Registration</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-100">
+<nav class="bg-blue-600 text-white p-4 flex gap-4">
+  <a href="/dashboard" class="hover:underline">Dashboard</a>
+  <a href="/breed" class="hover:underline">Breed Recognition</a>
+  <a href="/breed-database" class="hover:underline">Breed Database</a>
+  <a href="/registration" class="hover:underline">Registration</a>
+  <a href="/login" onclick="logout()" class="ml-auto hover:underline">Logout</a>
+</nav>
+<div class="container mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-4 text-center">Animal Registration</h1>
+  <form id="registrationForm" class="space-y-3" action="/register" method="POST">
+    <input type="text" id="ownerName" placeholder="Owner Name" class="border px-3 py-2 rounded w-full" required>
+    <input type="text" id="animalId" placeholder="Animal ID / Tag Number" class="border px-3 py-2 rounded w-full" required>
+    <select id="species" class="border px-3 py-2 rounded w-full" required>
+      <option value="">Select Species</option>
+      <option value="cattle">Cattle</option>
+      <option value="buffalo">Buffalo</option>
+    </select>
+    <input type="text" id="breed" placeholder="Breed (or use Recognition Tool)" class="border px-3 py-2 rounded w-full" required>
+    <input type="number" id="age" placeholder="Age (in years)" class="border px-3 py-2 rounded w-full" required>
+    <input type="number" id="milkYield" placeholder="Milk Yield (liters/day)" class="border px-3 py-2 rounded w-full">
+    <input type="date" id="lastVaccination" class="border px-3 py-2 rounded w-full">
+    <textarea id="remarks" placeholder="Remarks" class="border px-3 py-2 rounded w-full"></textarea>
+    <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded w-full hover:bg-green-700">Register Animal</button>
+  </form>
+  <p id="registrationMessage" class="mt-2 text-green-600"></p>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>
